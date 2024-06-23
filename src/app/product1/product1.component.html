@@ -1,0 +1,25 @@
+<div class="container">
+   <form class="d-flex" role="search">
+        <input type="text" class="form-control" [(ngModel)]="searchtext" [ngModelOptions]="{standalone: true}" id="form1" placeholder="Search" aria-label="Search">
+</form>
+{{searchtext}}
+  <div class="row">
+    <!-- @for (product of productDetails; track $index) { -->
+    <div class="col-lg-6" *ngFor="let product of productDetails | searchFilter:searchtext">
+
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{product.pname}}</h5>
+          <h6 class="card-subtitle mb-2 text-body-secondary">{{product.ptype}}</h6>
+          <p class="card-text">
+           {{product.describe}}
+          </p>
+          <button type="button"  routerLink={{product.link}}   class="card-link btn btn-primary">{{product.btn}}</button>
+        </div>
+      </div>
+
+    </div>
+     <!-- } -->
+  </div>
+</div>
+<router-outlet></router-outlet>

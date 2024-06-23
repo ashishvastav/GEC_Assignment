@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row gy-4">
+    @for (user of fetchData; track $index) {
+    <div class="col-lg-3 col-sm-12">
+      <div class="card">
+        <h5 class="card-header">{{user.id}}</h5>
+        <div class="card-body">
+          <h5 class="card-title">{{user.title}}</h5>
+          <p class="card-text">{{user.description}}</p>
+        </div>
+      </div>
+    </div>
+     }
+  </div>
+</div>
+<!-- {{ fetchData | json }} -->
